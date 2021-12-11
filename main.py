@@ -13,3 +13,27 @@ def score_word(word):
     else:
       point_total += 0
   return point_total
+
+  # brownie_points = score_word("BROWNIE")
+# print(brownie_points)
+
+player_to_words = {"player1":["BLUE","TENNIS","EXIT"],"wordNerd":["EARTH","EYES","MACHINE"],"Lexi Con":["ERASER","BELLY","HUSKY"],"Prof Reader":["ZAP","COMA","PERIOD"]}
+player_to_points = {}
+# print(player_to_words)
+
+def update_points_totals():
+  for player, words in player_to_words.items():
+    player_points = 0
+    for word in words:
+      player_points += score_word(word)
+    player_to_points[player] = player_points
+
+update_points_totals()
+print(player_to_points)
+
+#Bonus tasks done below
+
+def play_word(player, word):
+  player_to_words[player].append(word)
+
+# print(type(player_to_words["player1"]))
